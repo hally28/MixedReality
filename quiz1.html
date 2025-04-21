@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Culture Quiz</title>
+  <link rel="stylesheet" href="CSS/style.css">
+	<style>
+    body { background-color: #f8f1e9; }
+    h1 { color: #e74c3c; }
+    .option:hover { background-color: #e0e0e0; }
+    button { background-color: #e74c3c; }
+    button:hover { background-color: #c0392b; }
+</style>
+</head>
+<body>
+    
+    <div class="quiz-container">
+      <h1>Chinese Culture Quiz</h1>
+        
+        <div class="question">
+            In many parts of the world, people eat for nutrition or convenience.
+            But in China, food is more than just fuel — it's part of family, tradition, and even philosophy!
+            A Chinese meal is often shared, with many dishes placed in the center of the table. Everyone uses chopsticks to take what they like.
+            So, what does sharing food usually symbolize in Chinese culture?
+        </div>
+        
+        <div class="options">
+            <label class="option">
+              <input type="radio" name="answer" value="A"> A. Showing off cooking skills
+            </label>
+            
+            <label class="option">
+                <input type="radio" name="answer" value="B"> B. Testing people's chopstick speed
+            </label>
+            
+            <label class="option">
+              <input type="radio" name="answer" value="C"> C. Expressing love and connection
+            </label>
+            
+            <label class="option">
+                <input type="radio" name="answer" value="D"> D. Practicing balance in diet
+            </label>
+        </div>
+        
+        <button onclick="checkAnswer()">Submit Answer</button>
+        
+        <div id="result" class="result"></div>
+        
+        <div id="nextClue" class="next-clue" style="display: none;">
+            You've tasted a piece of Chinese warmth. Now, follow the color of luck — find something small, red, and full of blessings...
+        </div>
+    </div>
+    
+<script>
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+            const resultDiv = document.getElementById('result');
+            const nextClueDiv = document.getElementById('nextClue');
+            
+            if (!selectedOption) {
+                alert('Please select an answer!');
+                return;
+            }
+            
+            if (selectedOption.value === 'C') {
+                resultDiv.innerHTML = '✅ <strong>Correct!</strong> Sharing food in China symbolizes expressing love and connection.';
+                resultDiv.className = 'result correct';
+                nextClueDiv.style.display = 'block';
+            } else {
+                resultDiv.innerHTML = '❌ Not quite right. In Chinese culture, sharing food is more about emotional connection than ' + 
+                                    (selectedOption.value === 'A' ? 'showing off skills.' : 
+                                     selectedOption.value === 'B' ? 'testing chopstick speed.' : 'diet balance.');
+                resultDiv.className = 'result';
+                nextClueDiv.style.display = 'none';
+            }
+            
+            resultDiv.style.display = 'block';
+            
+            // 平滑滚动到结果区域
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
