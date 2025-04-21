@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Envelope Culture Quiz</title>
+    <link rel="stylesheet" href="CSS/style.css">
+	<style>
+	body { background-color: #f8e8e8; }
+       h1 { color: #c62828; }
+       .option:hover { background-color: #ffebee; }
+       button { background-color: #c62828; }
+       button:hover { background-color: #b71c1c; }
+	</style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Red Envelope Culture Quiz</h1>
+        
+        <div class="question">
+            In Chinese culture, people love giving small red envelopes (called hóngbāo) during festivals and celebrations.
+            These envelopes don't contain letters — they hold money! But not just for spending...
+            Imagine someone gives you a red envelope during Chinese New Year. What are they really sending you?
+        </div>
+        
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="answer" value="A"> A. A bill to pay
+            </label>
+            
+            <label class="option">
+                <input type="radio" name="answer" value="B"> B. A blessing for good fortune
+            </label>
+            
+            <label class="option">
+                <input type="radio" name="answer" value="C"> C. A shopping coupon
+            </label>
+            
+            <label class="option">
+                <input type="radio" name="answer" value="D"> D. A secret message
+            </label>
+        </div>
+        
+        <button onclick="checkAnswer()">Submit Answer</button>
+        
+        <div id="result" class="result"></div>
+        
+        <div id="nextClue" class="next-clue" style="display: none;">
+            You're on a roll! In the 1930s, people in Shanghai didn't drive — they rode something else... 
+            Find the space with a rickshaw or old movie poster to continue your journey.
+        </div>
+    </div>
+    
+<script src="JS/script.js"></script>
+</body>
+</html>
